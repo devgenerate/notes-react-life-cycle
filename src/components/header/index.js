@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles.scss';
+
 export function Header({ count }) {
     return (
         <header className="header">

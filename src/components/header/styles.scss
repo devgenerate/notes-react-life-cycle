@@ -1,0 +1,18 @@
+.header {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__count {
+        background-color: tomato;
+        border-radius: 50%;
+        color: white;
+        height: 25px;
+        min-width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

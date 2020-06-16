@@ -1,6 +1,7 @@
 import { useCallback, useReducer } from 'react';
 
 const ACTIONS = {
+    RESET_FORM: 'RESET_FORM',
     SET_DESCRIPTION: 'SET_DESCRIPTION',
     SET_TITLE: 'SET_TITLE'
 };
@@ -24,6 +25,8 @@ function reducer(state = INITIAL_STATE, action) {
                 ...state,
                 title: payload
             };
+        case ACTIONS.RESET_FORM:
+            return {...INITIAL_STATE};
         default:
             return state;
     }
@@ -40,7 +43,12 @@ export function useForm() {
         dispatch({ payload, type: ACTIONS.SET_TITLE });
     }, []);
 
+    function clear() {
+        dispatch({ type: ACTIONS.RESET_FORM });
+    }
+
     return {
+        clear,
         description,
         setDescription,
         setTitle,
